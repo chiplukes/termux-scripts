@@ -21,17 +21,19 @@ if __name__ == "__main__":
 
     BOZEMAN = 45.6770, 111.0429
     weekday = date.today()
+
+    ret_str = "Good morning lazy folk, here is the weather forecast for Bozeman, MT."
     with forecast(api_key, *BOZEMAN) as bozeman:
-        print(bozeman.daily.summary, end='\n---\n')
         for day in bozeman.daily[:2]:
             day = dict(day = date.strftime(weekday, '%a'),
                     sum = day.summary,
                     tempMin = day.temperatureMin,
                     tempMax = day.temperatureMax
                     )
-            print('{day}: {sum} Temp range: {tempMin} - {tempMax}'.format(**day))
+            ret_str += '{day}: {sum} Temp range: {tempMin} - {tempMax}'.format(**day)
             weekday += timedelta(days=1)
-
+        ret_str += bozeman.daily.summary
+    print(ret_str)
 
     #send_weather(sys.argv[1])
-   #send_weather(msg)
+    send_weather(ret_str)
