@@ -6,14 +6,25 @@
  * Termux: Task (run Termux from tasker)
  
 # set up ssh (port 8022 on termux)
- * https://github.com/tomhiggins/TermuxSSHDsetup
- * https://medium.com/@baradhiren07/accessing-termux-from-putty-c10512ca76f1
+ * https://glow.li/technology/2015/11/06/run-an-ssh-server-on-your-android-with-termux/
  * apt install openssh
  * sshd
+ * touch ~/.ssh/authorized_keys
+ * chmod 600 ~/.ssh/authorized_keys
+ * chmod 700 ~/.ssh
  * ssh-keygen
- * ifconfig to find ip address of phone
+ * cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+ * chmod 600 ~/.ssh/authorized_keys
  
+# copy keys to sdcard (shows up under /phone instead /card)
+ * cp ~/.ssh/id_rsa /sdcard
+ 
+# convert id_rsa to id_rsa.ppk file if using putty
+ * PuttyGen installed with putty on windows, use this to generate *.ppk
 
+# ifconfig to find ip address of phone
+ * run Putty, load key under connection-ssh-auth
+ * I had to killall sshd on termux then restart sshd before it worked.
 
 # termux-scripts
 scripts for setting up termux for tinkering with neovim, python, tasker, etc.
