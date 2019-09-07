@@ -30,6 +30,7 @@
 scripts for setting up termux for tinkering with neovim, python, tasker, etc.
 
 setup_termux.sh - installs basic stuff for using python and neovim
+ * curl -sSL https://raw.githubusercontent.com/chiplukes/termux-scripts/master/setup_termux.sh | bash
 
 weather.py - receives a TIME variable string sent from tasker task, sends an intent back to another tasker task that reads the returned string.  Just a simple example of message passing from tasker to a python script in termux, then back to tasker.  Requires Termux:Task app installed.
 
