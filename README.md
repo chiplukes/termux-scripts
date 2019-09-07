@@ -1,3 +1,20 @@
+# use f-droid to install the following
+ * Termux Terminal emulator with packages
+ * Termux: API access android functions from Linux
+ * Termux: Boot
+ * Termux: Styling
+ * Termux: Task (run Termux from tasker)
+ 
+# set up ssh (port 8022 on termux)
+ * https://github.com/tomhiggins/TermuxSSHDsetup
+ * https://medium.com/@baradhiren07/accessing-termux-from-putty-c10512ca76f1
+ * apt install openssh
+ * sshd
+ * ssh-keygen
+ * ifconfig to find ip address of phone
+ 
+
+
 # termux-scripts
 scripts for setting up termux for tinkering with neovim, python, tasker, etc.
 
