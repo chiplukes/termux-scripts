@@ -34,6 +34,15 @@ if __name__ == "__main__":
             weekday += timedelta(days=1)
         ret_str += bozeman.daily.summary
     print(ret_str)
+    ret_str = ret_str.replace('-',' to ')
+    ret_str = ret_str.replace('MT','')
+    ret_str = ret_str.replace('Mon:','Monday')
+    ret_str = ret_str.replace('Tue:','Tuesday')
+    ret_str = ret_str.replace('Wed:','Wednesday')
+    ret_str = ret_str.replace('Thu:','Thursday')
+    ret_str = ret_str.replace('Fri:','Friday')
+    ret_str = ret_str.replace('Sat:','Saturday')
+    ret_str = ret_str.replace('Sun:','Sunday')
 
     #send_weather(sys.argv[1])
     send_weather(ret_str)
